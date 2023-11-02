@@ -1,6 +1,7 @@
 import cmdata
 
 cm_continue = True
+res_suff = False
 
 while cm_continue != 'False':
     user_inp = input("What would you like? (espresso/latte/cappuccino): ")
@@ -28,5 +29,10 @@ while cm_continue != 'False':
             print("Sorry there is shortage in Milk")
         elif rescheck(user_inp, 'coffee') >= cmres('coffee'):
             print("Sorry there is shortage in Coffee")
+        else:
+            res_suff = True
+
+    # if res_suff == True:
+        
 
 

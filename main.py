@@ -18,4 +18,17 @@ while cm_continue != False:
     if user_inp == 'off':
         cm_continue = False
 
-    # if user_inp == 'latte':
+    def rescheck(coffee, rescheck):
+        return cmdata.menu[coffee]['ingredients'][rescheck]
+
+    if user_inp == 'latte' or user_inp == 'espresso' or user_inp == 'cappuccino':
+        if rescheck(user_inp, 'water') >= cmres('water'):
+            print("Sorry there is shortage in Water")
+        elif rescheck(user_inp, 'milk') >= cmres('milk'):
+            print("Sorry there is shortage in Milk")
+        elif rescheck(user_inp, 'coffee') >= cmres('coffee'):
+            print("Sorry there is shortage in Coffee")
+
+    # print(rescheck(user_inp, 'water'))
+    # print(cmres('water'))
+

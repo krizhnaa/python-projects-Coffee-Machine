@@ -1,13 +1,21 @@
 import cmdata
 
-user_inp = input("What would you like? (espresso/latte/cappuccino): ")
+cm_continue = True
 
-# print(cmdata.menu['espresso']['ingredients']['water'])
+while cm_continue != False:
+    user_inp = input("What would you like? (espresso/latte/cappuccino): ")
 
-def cmres(res):
-    return cmdata.resources[res]
+    # print(cmdata.menu['espresso']['ingredients']['water'])
 
-if user_inp == 'report':
-    print(f"Water : {cmres('water')}ml")
-    print(f"Milk : {cmres('milk')}ml")
-    print(f"coffee : {cmres('coffee')}g")
+    def cmres(res):
+        return cmdata.resources[res]
+
+    if user_inp == 'report':
+        print(f"Water : {cmres('water')}ml")
+        print(f"Milk : {cmres('milk')}ml")
+        print(f"coffee : {cmres('coffee')}g")
+
+    if user_inp == 'off':
+        cm_continue = False
+
+    # if user_inp == 'latte':

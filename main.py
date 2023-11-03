@@ -2,6 +2,10 @@ import cmdata
 
 cm_continue = True
 res_suff = False
+quarters = 0.25
+dimes = 0.10
+nickle = 0.05
+penny = 0.01
 
 while cm_continue != 'False':
     user_inp = input("What would you like? (espresso/latte/cappuccino): ")
@@ -39,5 +43,7 @@ while cm_continue != 'False':
         user_dimes = input("How many Dimes? ")
         user_nickles = input("How many Nickles? ")
         user_pennies = input("How many pennies? ")
+        
+    
 
 

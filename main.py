@@ -37,13 +37,23 @@ while cm_continue != 'False':
             res_suff = True
 
 
+    def costcheck(coffee):
+        return cmdata.menu[coffee]['cost']
+
     if res_suff == True:
         print("Please insert coins")
-        user_quart = input("How many Quarters? ")
-        user_dimes = input("How many Dimes? ")
-        user_nickles = input("How many Nickles? ")
-        user_pennies = input("How many pennies? ")
-        
-    
+        user_quart = float(input("How many Quarters? "))
+        user_dimes = float(input("How many Dimes? "))
+        user_nickles = float(input("How many Nickles? "))
+        user_pennies = float(input("How many pennies? "))
+
+        def usertot(quart, dim, nick, pen):
+            return quart * quarters + dim * dimes + nick * nickle + pen * penny
+
+        user_tot = usertot(user_quart, user_dimes, user_nickles, user_pennies)
+
+         
+
+
 
 

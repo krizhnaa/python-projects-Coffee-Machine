@@ -32,7 +32,12 @@ while cm_continue != 'False':
         else:
             res_suff = True
 
-    # if res_suff == True:
-        
+
+    if res_suff == True:
+        print("Please insert coins")
+        user_quart = input("How many Quarters? ")
+        user_dimes = input("How many Dimes? ")
+        user_nickles = input("How many Nickles? ")
+        user_pennies = input("How many pennies? ")
 
 

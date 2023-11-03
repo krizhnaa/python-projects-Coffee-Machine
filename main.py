@@ -19,6 +19,7 @@ while cm_continue != 'False':
         print(f"Water : {cmres('water')}ml")
         print(f"Milk : {cmres('milk')}ml")
         print(f"coffee : {cmres('coffee')}g")
+        res_suff = False
 
     if user_inp == 'off':
         cm_continue = False
@@ -56,14 +57,27 @@ while cm_continue != 'False':
         print(costcheck(user_inp))
 
         user_change = user_tot - costcheck(user_inp)
+        tran_comp = False
 
         if user_tot == costcheck(user_inp):
-            print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+            # print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+            tran_comp = True
         elif user_tot > costcheck(user_inp):
-            print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+            # print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+            tran_comp = True
             print(f"Your change is ${user_change}")
         else:
             print("Sorry that's not enough money. Money refunded")
+
+        if tran_comp == True:
+            print(f"You will be receiving your {user_inp} shortly!!!")
+            # print(cmdata.resources['water'])
+            # print(rescheck(user_inp, 'water'))
+            cmdata.resources['water'] -= rescheck(user_inp, 'water')
+            if user_inp != 'espresso':
+                cmdata.resources['milk'] -= rescheck(user_inp, 'milk')
+            cmdata.resources['coffee'] -= rescheck(user_inp, 'coffee')
+            # print(cmdata.resources['water'])
 
 
 

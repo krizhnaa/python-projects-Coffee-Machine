@@ -10,8 +10,6 @@ penny = 0.01
 while cm_continue != 'False':
     user_inp = input("What would you like? (espresso/latte/cappuccino): ")
 
-    # print(cmdata.menu['espresso']['ingredients']['water'])
-
     def cmres(res):
         return cmdata.resources[res]
 
@@ -60,10 +58,8 @@ while cm_continue != 'False':
         tran_comp = False
 
         if user_tot == costcheck(user_inp):
-            # print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
             tran_comp = True
         elif user_tot > costcheck(user_inp):
-            # print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
             tran_comp = True
             print(f"Your change is ${user_change}")
         else:
@@ -71,13 +67,10 @@ while cm_continue != 'False':
 
         if tran_comp == True:
             print(f"You will be receiving your {user_inp} shortly!!!")
-            # print(cmdata.resources['water'])
-            # print(rescheck(user_inp, 'water'))
             cmdata.resources['water'] -= rescheck(user_inp, 'water')
             if user_inp != 'espresso':
                 cmdata.resources['milk'] -= rescheck(user_inp, 'milk')
             cmdata.resources['coffee'] -= rescheck(user_inp, 'coffee')
-            # print(cmdata.resources['water'])
 
 
 

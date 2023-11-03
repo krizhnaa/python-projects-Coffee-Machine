@@ -41,7 +41,7 @@ while cm_continue != 'False':
         return cmdata.menu[coffee]['cost']
 
     if res_suff == True:
-        print("Please insert coins")
+        print("Please insert the coins")
         user_quart = float(input("How many Quarters? "))
         user_dimes = float(input("How many Dimes? "))
         user_nickles = float(input("How many Nickles? "))
@@ -52,7 +52,18 @@ while cm_continue != 'False':
 
         user_tot = usertot(user_quart, user_dimes, user_nickles, user_pennies)
 
-         
+        print(user_tot)
+        print(costcheck(user_inp))
+
+        user_change = user_tot - costcheck(user_inp)
+
+        if user_tot == costcheck(user_inp):
+            print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+        elif user_tot > costcheck(user_inp):
+            print(f"Transaction Successful, You will be receiving {user_inp} shortly.")
+            print(f"Your change is ${user_change}")
+        else:
+            print("Sorry that's not enough money. Money refunded")
 
 
 
